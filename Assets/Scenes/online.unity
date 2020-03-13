@@ -1499,7 +1499,6 @@ GameObject:
   - component: {fileID: 1496111313}
   - component: {fileID: 1496111321}
   - component: {fileID: 1496111323}
-  - component: {fileID: 1496111322}
   m_Layer: 0
   m_Name: Game
   m_TagString: Untagged
@@ -1680,23 +1679,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a486c8589cb50443a8498bba63ffea9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1496111322
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1496111309}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5985e6165b540244586fb4175b3b3403, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncMode: 0
-  syncInterval: 0.1
-  ListPlayer:
-  - {fileID: 5140150619223892777, guid: a641e4eb1e566534397acac1b2e34dfc, type: 3}
-  Tanque: {fileID: 5140150619223892777, guid: a641e4eb1e566534397acac1b2e34dfc, type: 3}
 --- !u!114 &1496111323
 MonoBehaviour:
   m_ObjectHideFlags: 0

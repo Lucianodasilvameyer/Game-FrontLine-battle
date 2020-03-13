@@ -297,6 +297,7 @@ GameObject:
   - component: {fileID: 4240610464730470619}
   - component: {fileID: 1133199873735258286}
   - component: {fileID: 1133199873735258287}
+  - component: {fileID: 2085499925225592420}
   m_Layer: 0
   m_Name: Tanque
   m_TagString: Tanque
@@ -531,7 +532,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneId: 1893113023
+  sceneId: 2847693159
   serverOnly: 0
   m_AssetId: 
 --- !u!114 &1133199873735258287
@@ -553,6 +554,24 @@ MonoBehaviour:
   localRotationSensitivity: 0.01
   localScaleSensitivity: 0.01
   compressRotation: 1
+--- !u!114 &2085499925225592420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1133199873735258274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5985e6165b540244586fb4175b3b3403, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  ListPlayer:
+  - {fileID: 1133199873735258274}
+  Tanque:
+  - {fileID: 1133199873735258274}
 --- !u!1 &2034358840943229926
 GameObject:
   m_ObjectHideFlags: 0
