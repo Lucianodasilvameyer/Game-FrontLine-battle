@@ -3,25 +3,36 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CanhaoMovimento : MonoBehaviour
-{   
+{
+    ReferenciaDoPlayerAoInstanciar referenciaDoPlayerAoInstanciar_ref;
     Rigidbody2D righ;
     
     Vector2 mousePos;
 
     public Camera cam;
 
-    [SerializeField]
-    private Transform Tanque;
+
+    
+    public Transform Tanque;
 
     void Awake()
     {
+        referenciaDoPlayerAoInstanciar_ref = GameObject.Find("Game").GetComponent<ReferenciaDoPlayerAoInstanciar>();
+
+        
         righ = GetComponent<Rigidbody2D>();
+
+
     }
     
     // Update is called once per frame
     void Update()
     {
-        transform.position = Tanque.transform.position;        
+        if (referenciaDoPlayerAoInstanciar_ref.ListPlayer != null)
+        {
+            transform.position = Tanque.transform.position;
+        }
+               
 
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);      
     }

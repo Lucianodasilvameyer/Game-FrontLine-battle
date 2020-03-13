@@ -29,6 +29,6 @@ public class TiroDoPlayer : MonoBehaviour
 
         municao.Ammo--;
 
-        camScript.cameraShake();
+        //camScript.cameraShake();
     }
 }

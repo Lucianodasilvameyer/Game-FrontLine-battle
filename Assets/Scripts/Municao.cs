@@ -33,7 +33,7 @@ public class Municao : MonoBehaviour
                 ammo = ammoMax;
             }
 
-            ammoText.text = "" + ammo;
+            //ammoText.text = "" + ammo;
         }
     }
   

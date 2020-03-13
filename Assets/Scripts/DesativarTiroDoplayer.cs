@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class DesativarTiroDoplayer : MonoBehaviour
 {
+
+    ReferenciaDoPlayerAoInstanciar referenciaDoPlayerAoInstanciar_ref;
+
     TiroDoPlayer tiroDoPlayer_ref;
     Vida vida_ref;
     public GameObject[] Player;
@@ -11,8 +14,18 @@ public class DesativarTiroDoplayer : MonoBehaviour
 
     private void Awake()
     {
-        tiroDoPlayer_ref = GameObject.Find("Tanque").GetComponent<TiroDoPlayer>();
-        vida_ref = GameObject.Find("Tanque").GetComponent<Vida>();
+        referenciaDoPlayerAoInstanciar_ref = GetComponent<ReferenciaDoPlayerAoInstanciar>();
+
+        if(referenciaDoPlayerAoInstanciar_ref.ListPlayer != null)
+        {
+            tiroDoPlayer_ref = GameObject.Find("Tanque").GetComponent<TiroDoPlayer>();
+
+            vida_ref = GameObject.Find("Tanque").GetComponent<Vida>();
+        }
+
+
+        
+       
     }
     void Start()
     {
