@@ -8,24 +8,17 @@ public class DesativarTiroDoplayer : MonoBehaviour
     
     UsarRefereciaDoPlayer usarRefereciaDoPlayer_ref;
 
-    TiroDoPlayer tiroDoPlayer_ref;
+    TiroDoPlayer[] tiroDoPlayer_ref;
     Vida vida_ref;
-    public GameObject[] Player;
+    Vida[] vida_ref;
+
+    GameObject[] Player;
     // Start is called before the first frame update
 
     void Awake()
     {
-        usarRefereciaDoPlayer_ref = GetComponent<UsarRefereciaDoPlayer>();
-
-         if(usarRefereciaDoPlayer_ref.ListPlayer != null)
-         {
-            tiroDoPlayer_ref = GameObject.Find("Tanque").GetComponent<TiroDoPlayer>();
-            
-
-             vida_ref = GameObject.Find("Tanque").GetComponent<Vida>();
-         }
-
-
+        
+         
 
 
     }
@@ -53,13 +46,14 @@ public class DesativarTiroDoplayer : MonoBehaviour
     }
     public void DesligarTiroDoPlayer()
     {
-        if (Player.Length > 0)
-        {
-            for(int i=0; i < Player.Length; i++)
+        
+        
+            for(int i=0; i < usarRefereciaDoPlayer_ref.ListPlayer.Count; i++)
             {
-                Player[i].GetComponent<TiroDoPlayer>().enabled = false;
+                tiroDoPlayer_ref[i].enabled = false;
+                vida_ref_ref[i].enabled = false; 
             }
-        }
+        
     }
 
 }

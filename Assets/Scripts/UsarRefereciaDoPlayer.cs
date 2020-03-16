@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class UsarRefereciaDoPlayer : MonoBehaviour
 {
-    //ReferenciaDoPlayerAoInstanciar referenciaDoPlayerAoInstanciar_ref;
+    
 
     public List<GameObject> ListPlayer = new List<GameObject>();
     // Start is called before the first frame update
 
     void Awake()
     {
-        //referenciaDoPlayerAoInstanciar_ref = GameObject.Find("Tanque").GetComponent<ReferenciaDoPlayerAoInstanciar>();    
+           
     }
     void Start()
     {
@@ -23,8 +23,8 @@ public class UsarRefereciaDoPlayer : MonoBehaviour
     {
         
     }
-    public void AddPlayer(Tanque tanque)
+    public void AddPlayer(GameObject gameObject)
     {
-        ListPlayer.Add(tanque.gameObject);
+        ListPlayer.Add(gameObject);
     }
 }
