@@ -5,8 +5,8 @@ using System.Linq;
 
 public class TiroDoPlayer : MonoBehaviour
 {
-    [SerializeField]
-    CameraScript camScript;
+    //[SerializeField]
+    //CameraScript camScript;
 
     [SerializeField]
     Municao municao;

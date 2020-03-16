@@ -2,33 +2,39 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class DesativarTiroDoplayer : MonoBehaviour
 {
-
-    ReferenciaDoPlayerAoInstanciar referenciaDoPlayerAoInstanciar_ref;
+    
+    UsarRefereciaDoPlayer usarRefereciaDoPlayer_ref;
 
     TiroDoPlayer tiroDoPlayer_ref;
     Vida vida_ref;
     public GameObject[] Player;
     // Start is called before the first frame update
 
-    private void Awake()
+    void Awake()
     {
-        referenciaDoPlayerAoInstanciar_ref = GetComponent<ReferenciaDoPlayerAoInstanciar>();
+        usarRefereciaDoPlayer_ref = GetComponent<UsarRefereciaDoPlayer>();
 
-        if(referenciaDoPlayerAoInstanciar_ref.ListPlayer != null)
-        {
+         if(usarRefereciaDoPlayer_ref.ListPlayer != null)
+         {
             tiroDoPlayer_ref = GameObject.Find("Tanque").GetComponent<TiroDoPlayer>();
+            
 
-            vida_ref = GameObject.Find("Tanque").GetComponent<Vida>();
-        }
+             vida_ref = GameObject.Find("Tanque").GetComponent<Vida>();
+         }
 
 
-        
-       
+
+
     }
     void Start()
     {
+       
+        
+
+           
         
     }
 

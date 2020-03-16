@@ -22,8 +22,5 @@ public class PegarMunicao : MonoBehaviour
             Destroy(collision.gameObject);
         }
     }
-    public void AddPlayer(GameObject gameObject)
-    {
-        referenciaDoPlayerAoInstanciar_ref.ListPlayer.Add(gameObject);
-    }
+    
 }

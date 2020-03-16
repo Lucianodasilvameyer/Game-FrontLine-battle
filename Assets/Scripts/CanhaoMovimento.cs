@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CanhaoMovimento : MonoBehaviour
 {
+    UsarRefereciaDoPlayer usarRefereciaDoPlayer_ref;
+
     ReferenciaDoPlayerAoInstanciar referenciaDoPlayerAoInstanciar_ref;
     Rigidbody2D righ;
     
@@ -12,15 +14,20 @@ public class CanhaoMovimento : MonoBehaviour
     public Camera cam;
 
 
+  
+
     
     public Transform Tanque;
 
     void Awake()
     {
-        referenciaDoPlayerAoInstanciar_ref = GameObject.Find("Game").GetComponent<ReferenciaDoPlayerAoInstanciar>();
+        usarRefereciaDoPlayer_ref = GameObject.Find("Game").GetComponent<UsarRefereciaDoPlayer>();
+
+        righ = GetComponent<Rigidbody2D>();
 
         
-        righ = GetComponent<Rigidbody2D>();
+
+
 
 
     }
@@ -28,20 +35,40 @@ public class CanhaoMovimento : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (referenciaDoPlayerAoInstanciar_ref.ListPlayer != null)
+        if (usarRefereciaDoPlayer_ref.ListPlayer != null)
         {
             transform.position = Tanque.transform.position;
         }
                
+         
+        
+         
+            mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+         
+            
+         
+      
+            
+      
 
-        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);      
+              
     }
     void FixedUpdate()
     {
-        Vector2 OlharDirecao = mousePos - righ.position;
-
-        float angle = Mathf.Atan2(OlharDirecao.y,OlharDirecao.x) * Mathf.Rad2Deg-90f;
         
-        righ.rotation = angle; 
+        
+            Vector2 OlharDirecao = mousePos - righ.position;
+
+        if (OlharDirecao != null)
+        {
+            float angle = Mathf.Atan2(OlharDirecao.y, OlharDirecao.x) * Mathf.Rad2Deg - 90f;
+
+            righ.rotation = angle;
+        }
+
+           
+        
+
+        
     }
 }

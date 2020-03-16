@@ -5,46 +5,34 @@ using Mirror;
 
 public class ReferenciaDoPlayerAoInstanciar : NetworkBehaviour
 {
-    public List<GameObject> ListPlayer = new List<GameObject>();
+
+    UsarRefereciaDoPlayer usarRefereciaDoPlayer_ref;
+
     
-
-    public GameObject[] Tanque;
-
-    //public GameObject Tank;
-    PegarMunicao pegarMunicao_ref;
-
-    private void Awake()
+    public Tanque tanque;
+    
+    
+    void Awake()
     {
-        pegarMunicao_ref = GetComponent<PegarMunicao>();
+        usarRefereciaDoPlayer_ref = GameObject.Find("Game").GetComponent<UsarRefereciaDoPlayer>();
     }
     // Start is called before the first frame update
     void Start()
     {
-        
+        OnStartLocalPlayer();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+       
     }
+    
+
     public override void OnStartLocalPlayer()
     {
-        base.OnStartLocalPlayer(); 
+        base.OnStartLocalPlayer();
 
-        
-        
-            for(int i = 0; i < Tanque.Length; i++)
-            {
-                Tanque[i].GetComponent<PegarMunicao>().AddPlayer(gameObject);
-            }
-        
+        usarRefereciaDoPlayer_ref.AddPlayer(tanque);
     }
-
-    public void AddPlayer(GameObject gameObject)
-    {
-        ListPlayer.Add(gameObject);
-    }
-
-
 }
