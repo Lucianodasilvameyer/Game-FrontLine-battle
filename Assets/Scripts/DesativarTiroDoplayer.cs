@@ -12,21 +12,22 @@ public class DesativarTiroDoplayer : MonoBehaviour
     TiroDoPlayer tiroDoPlayer_ref;
  
     Vida vida_ref;
+    Vida[] vida;
    
 
-    GameObject[] Player;
+    //GameObject[] Player;
     // Start is called before the first frame update
 
     void Awake()
     {
-        
-         
+       
 
+        usarRefereciaDoPlayer_ref = GameObject.Find("Game").GetComponent<UsarRefereciaDoPlayer>();
 
     }
     void Start()
     {
-       
+
         
 
            
@@ -48,10 +49,8 @@ public class DesativarTiroDoplayer : MonoBehaviour
     }
     public void DesligarTiroDoPlayer()
     {
-
-        tiroDoPlayer_ref.enabled = false;
-        
-
+       
+           
     }
 
 }

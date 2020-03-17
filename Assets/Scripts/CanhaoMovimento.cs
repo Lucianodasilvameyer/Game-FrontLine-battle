@@ -6,7 +6,7 @@ public class CanhaoMovimento : MonoBehaviour
 {
     UsarRefereciaDoPlayer usarRefereciaDoPlayer_ref;
 
-    ReferenciaDoPlayerAoInstanciar referenciaDoPlayerAoInstanciar_ref;
+    Game referenciaDoPlayerAoInstanciar_ref;
     Rigidbody2D righ;
     
     Vector2 mousePos;

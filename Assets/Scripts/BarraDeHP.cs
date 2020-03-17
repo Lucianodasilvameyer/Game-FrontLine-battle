@@ -21,11 +21,7 @@ public class BarraDeHP : MonoBehaviour
         set
         {
             counter = value;
-            if (counter <= 0)
-            {
-                desativarSpawnArmadilhas_ref.DesligarSpawnArmadilha();
-            }
-
+            
             spriteRenderer.sprite = hpSprites[counter];
         }
     }

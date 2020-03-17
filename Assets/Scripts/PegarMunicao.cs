@@ -9,11 +9,11 @@ public class PegarMunicao : MonoBehaviour
     [SerializeField]
     Municao municao;
 
-    ReferenciaDoPlayerAoInstanciar referenciaDoPlayerAoInstanciar_ref;
+    Game referenciaDoPlayerAoInstanciar_ref;
     private void Awake()
     {
         spawnarMunicao_ref = GameObject.Find("Game").GetComponent<SpawnarMunicao>();
-        referenciaDoPlayerAoInstanciar_ref = GameObject.Find("Game").GetComponent<ReferenciaDoPlayerAoInstanciar>();
+        referenciaDoPlayerAoInstanciar_ref = GameObject.Find("Game").GetComponent<Game>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

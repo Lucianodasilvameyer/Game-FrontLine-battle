@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 5359348652226382833}
   - component: {fileID: 5359348652226382834}
   - component: {fileID: 5359348652226382835}
-  - component: {fileID: 5359348652226382828}
   - component: {fileID: 5359348652226382829}
   - component: {fileID: 5359348652226382830}
   - component: {fileID: 5359348652226382831}
@@ -135,20 +134,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &5359348652226382828
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5359348652226382822}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5985e6165b540244586fb4175b3b3403, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncMode: 0
-  syncInterval: 0.1
 --- !u!61 &5359348652226382829
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -217,7 +202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hpBar: {fileID: 5359348652246552356}
-  hp: 7
+  hp: 0
 --- !u!114 &5359348652226382825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -271,7 +256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneId: 1658943271
+  sceneId: 0
   serverOnly: 0
   m_AssetId: 
 --- !u!114 &5359348652226382821
@@ -305,6 +290,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60f84f824684f0e4b8f8a1fb944c2a6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
 --- !u!1001 &269648967
 PrefabInstance:
   m_ObjectHideFlags: 0

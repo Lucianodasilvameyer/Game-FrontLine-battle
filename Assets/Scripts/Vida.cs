@@ -6,7 +6,7 @@ using System;
 
 public class Vida : MonoBehaviour
 {
-    
+   
 
     public event Action OnDeath; 
 
@@ -14,8 +14,8 @@ public class Vida : MonoBehaviour
     BarraDeHP hpBar;
 
     private int HPMax = 7;
-    [SerializeField]
-    private int hp;
+    
+    public int hp;
     public int HP
     {
         get
@@ -29,7 +29,11 @@ public class Vida : MonoBehaviour
             if (hp <= 0)
             {                
                 hp = 0;
-                
+
+                Game.singleton.DesligarSpawnmunicao();
+                Game.singleton.DesligarSpawnArmadilhas();
+                Game.singleton.AtivarGameOver();
+                Game.singleton.AtivarBotaoBack();
 
                 if(OnDeath != null)
                 {
@@ -45,11 +49,19 @@ public class Vida : MonoBehaviour
 
             hpBar.Counter = hp;
         }
+
+    }
+    private void Start()
+    {
+        
     }
 
     private void Awake()
     {
+       
+
         HP = HPMax;
+        
         
     }
 
