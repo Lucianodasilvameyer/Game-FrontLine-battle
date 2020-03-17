@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class DesativarSpawnArmadilhas : MonoBehaviour
 {
-    Vida vida_ref;
+   
     SpawnarArmadilhas spawnarArmadilhas_ref;
+    SpawnarArmadilhas[] spawnarArmadilhas;
+
+    
 
     private void Awake()
     {
-        vida_ref = GameObject.Find("Tanque").GetComponent<Vida>();
+       
         spawnarArmadilhas_ref = GetComponent<SpawnarArmadilhas>();
     }
 
@@ -23,17 +26,12 @@ public class DesativarSpawnArmadilhas : MonoBehaviour
     {
         
     }
-    private void OnEnable()
-    {
-        vida_ref.OnDeath += DesligarSpawnArmadilha;
-    }
-    private void OnDisable()
-    {
-        vida_ref.OnDeath += DesligarSpawnArmadilha;
-    }
+    
     public void DesligarSpawnArmadilha()
     {
-        spawnarArmadilhas_ref.enabled = false;
-        Debug.Log("DesligarSpawnArmadilhas");
+        for(int i=0 ; i < spawnarArmadilhas_ref.ListArmadilhas.Count; i++)
+        {
+            spawnarArmadilhas[i].enabled = false;
+        }
     }
 }

@@ -8,9 +8,11 @@ public class DesativarTiroDoplayer : MonoBehaviour
     
     UsarRefereciaDoPlayer usarRefereciaDoPlayer_ref;
 
-    TiroDoPlayer[] tiroDoPlayer_ref;
+    //TiroDoPlayer[] tiroDoPlayer_ref;
+    TiroDoPlayer tiroDoPlayer_ref;
+ 
     Vida vida_ref;
-    Vida[] vida_ref;
+   
 
     GameObject[] Player;
     // Start is called before the first frame update
@@ -46,14 +48,10 @@ public class DesativarTiroDoplayer : MonoBehaviour
     }
     public void DesligarTiroDoPlayer()
     {
+
+        tiroDoPlayer_ref.enabled = false;
         
-        
-            for(int i=0; i < usarRefereciaDoPlayer_ref.ListPlayer.Count; i++)
-            {
-                tiroDoPlayer_ref[i].enabled = false;
-                vida_ref_ref[i].enabled = false; 
-            }
-        
+
     }
 
 }

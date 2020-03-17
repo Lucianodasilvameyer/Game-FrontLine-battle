@@ -5,12 +5,13 @@ using UnityEngine;
 public class DesativarSpawnMunicao : MonoBehaviour
 {
     SpawnarMunicao spawnarMunicao_ref;
-    Vida vida_ref;
+    SpawnarMunicao[] spawnarMunicao;
+    //Vida vida_ref;
 
     private void Awake()
     {
         spawnarMunicao_ref = GetComponent<SpawnarMunicao>();
-        vida_ref = GameObject.Find("Tanque").GetComponent<Vida>();
+        //vida_ref = GameObject.Find("Tanque").GetComponent<Vida>();
     }
     void Start()
     {
@@ -22,17 +23,14 @@ public class DesativarSpawnMunicao : MonoBehaviour
     {
         
     }
-    private void OnEnable()
-    {
-        vida_ref.OnDeath += DesligarSpawnMunicao;
-    }
-    private void OnDisable()
-    {
-        vida_ref.OnDeath -= DesligarSpawnMunicao;
-    }
+   
     public void DesligarSpawnMunicao()
     {
-        spawnarMunicao_ref.enabled = false;
-        Debug.Log("DesligarSpawnMunicao");
+        for(int i=0; i< spawnarMunicao_ref.ListMunicao.Count; i++)
+        {
+            spawnarMunicao[i].enabled = false;
+        }
+        
+        
     }
 }

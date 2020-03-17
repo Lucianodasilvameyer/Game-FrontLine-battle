@@ -6,6 +6,8 @@ using System;
 
 public class Vida : MonoBehaviour
 {
+    
+
     public event Action OnDeath; 
 
     [SerializeField]
@@ -27,6 +29,7 @@ public class Vida : MonoBehaviour
             if (hp <= 0)
             {                
                 hp = 0;
+                
 
                 if(OnDeath != null)
                 {
@@ -47,6 +50,7 @@ public class Vida : MonoBehaviour
     private void Awake()
     {
         HP = HPMax;
+        
     }
 
     private void Update()

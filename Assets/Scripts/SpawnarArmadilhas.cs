@@ -8,6 +8,12 @@ using System.Linq;
 
 public class SpawnarArmadilhas : MonoBehaviour
 {
+    [SerializeField]
+    Bomba bomba;
+
+    [SerializeField]
+    MinaTerrestre minaTerrestre;
+
     public GameObject MinaTerrestrePrefab;
     public GameObject BombaPrefab;
 
@@ -130,10 +136,12 @@ public class SpawnarArmadilhas : MonoBehaviour
                 if (typeof(Y) == typeof(MinaTerrestre))
                 {
                     MinaTerrestre GameObject = Instantiate(MinaTerrestrePrefab, Position, Quaternion.identity).GetComponent<MinaTerrestre>();
+                    //ListArmadilhas.Add(minaTerrestre.gameObject);
                 }
                 if (typeof(Y) == typeof(Bomba))
                 {
-                    Bomba GameObject = Instantiate(BombaPrefab, Position, Quaternion.identity).GetComponent<Bomba>(); 
+                    Bomba GameObject = Instantiate(BombaPrefab, Position, Quaternion.identity).GetComponent<Bomba>();
+                    //ListArmadilhas.Add(bomba.gameObject);
                 }
             }
         }

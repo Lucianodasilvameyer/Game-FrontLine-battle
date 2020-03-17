@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class PegarMunicao : MonoBehaviour
 {
+    SpawnarMunicao spawnarMunicao_ref;
+
     [SerializeField]
     Municao municao;
 
     ReferenciaDoPlayerAoInstanciar referenciaDoPlayerAoInstanciar_ref;
     private void Awake()
     {
+        spawnarMunicao_ref = GameObject.Find("Game").GetComponent<SpawnarMunicao>();
         referenciaDoPlayerAoInstanciar_ref = GameObject.Find("Game").GetComponent<ReferenciaDoPlayerAoInstanciar>();
     }
 
@@ -19,7 +22,7 @@ public class PegarMunicao : MonoBehaviour
         {
             municao.Ammo++;
 
-            Destroy(collision.gameObject);
+            spawnarMunicao_ref.adicionarOuDestruirMunicao(collision.gameObject);
         }
     }
     

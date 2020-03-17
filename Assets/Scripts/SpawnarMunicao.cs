@@ -6,9 +6,12 @@ using System.Linq;
 
 public class SpawnarMunicao : MonoBehaviour
 {
+    [SerializeField]
+    Municao municao;
+
     public GameObject municaoPrefab;
 
-    public List<GameObject> Listmunicao = new List<GameObject>();
+    public List<GameObject> ListMunicao = new List<GameObject>();
     [SerializeField]
     private Transform LinhaDeSpawnMuni1;
     [SerializeField]
@@ -69,13 +72,13 @@ public class SpawnarMunicao : MonoBehaviour
 
         for(int i = 0; i < QuantidadeMunicao; i++)
         {
-            if (Listmunicao.Count > 0)
+            if (ListMunicao.Count > 0)
             {
-                if (Listmunicao.OfType<Municao>().Any())
+                if (ListMunicao.OfType<Municao>().Any())
                 {
-                    int lugar = Listmunicao.FindLastIndex(x => x.GetType() == typeof(Municao));
-                    GameObject muni = Listmunicao[lugar];
-                    Listmunicao.RemoveAt(lugar);
+                    int lugar = ListMunicao.FindLastIndex(x => x.GetType() == typeof(Municao));
+                    GameObject muni = ListMunicao[lugar];
+                    ListMunicao.RemoveAt(lugar);
 
                     muni.transform.position = Position;
                     muni.SetActive(true);
@@ -84,7 +87,19 @@ public class SpawnarMunicao : MonoBehaviour
             else
             {
                 Municao GameObject = Instantiate(municaoPrefab, Position, Quaternion.identity).GetComponent<Municao>();
+                
             }
+        }
+    }
+    public void adicionarOuDestruirMunicao(GameObject gameObject)
+    {
+        if (ListMunicao.Count > 0)
+        {
+            ListMunicao.Add(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
         }
     }
 }

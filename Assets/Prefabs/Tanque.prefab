@@ -149,7 +149,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  tanque: {fileID: 1037549685841666038}
 --- !u!61 &5359348652226382829
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -218,7 +217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hpBar: {fileID: 5359348652246552356}
-  hp: 0
+  hp: 7
 --- !u!114 &5359348652226382825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -272,7 +271,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneId: 3933676930
+  sceneId: 1658943271
   serverOnly: 0
   m_AssetId: 
 --- !u!114 &5359348652226382821

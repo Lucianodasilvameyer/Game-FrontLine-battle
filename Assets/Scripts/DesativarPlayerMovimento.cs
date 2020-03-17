@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DesativarPlayerMovimento : MonoBehaviour
 {
-    public GameObject[] Player;
+    
     Vida vida_ref;
     TanqueMovimento tanqueMovimento_ref;
 
@@ -36,13 +36,8 @@ public class DesativarPlayerMovimento : MonoBehaviour
     }
     public void DesligarPlayerMovimento()
     {
-        if (Player.Length > 0)
-        {
-            for(int i=0; i< Player.Length; i++)
-            {
-                Player[i].GetComponent<TanqueMovimento>().enabled = false;
-            }
-        }
+        tanqueMovimento_ref.enabled = false;
     }
+   
 
 }

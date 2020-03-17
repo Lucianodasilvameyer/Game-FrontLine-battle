@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class BarraDeHP : MonoBehaviour
 {
+    DesativarSpawnArmadilhas desativarSpawnArmadilhas_ref;
+
     public SpriteRenderer spriteRenderer;
 
     public Sprite[] hpSprites;
@@ -19,6 +21,10 @@ public class BarraDeHP : MonoBehaviour
         set
         {
             counter = value;
+            if (counter <= 0)
+            {
+                desativarSpawnArmadilhas_ref.DesligarSpawnArmadilha();
+            }
 
             spriteRenderer.sprite = hpSprites[counter];
         }
@@ -26,6 +32,13 @@ public class BarraDeHP : MonoBehaviour
 
     private void Awake()
     {
+        desativarSpawnArmadilhas_ref = GameObject.Find("Game").GetComponent<DesativarSpawnArmadilhas>();
+
         Counter = hpSprites.Length -1;
+
+       
+        
+           
+        
     }
 }

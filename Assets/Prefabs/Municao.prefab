@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3605888392054525509}
   - component: {fileID: -7148419893039628677}
   - component: {fileID: 6019426275500080888}
+  - component: {fileID: 408112223548620848}
   m_Layer: 0
   m_Name: Municao
   m_TagString: Ammo
@@ -141,6 +142,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneId: 1093587478
+  sceneId: 157953839
   serverOnly: 0
   m_AssetId: 
+--- !u!114 &408112223548620848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5688797720662961844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 897d1cb1ccfeb3541a0c97383c4f9898, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ammoText: {fileID: 0}
+  ammoMax: 0
+  ammo: 0
