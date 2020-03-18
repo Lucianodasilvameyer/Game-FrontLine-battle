@@ -256,7 +256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneId: 939485299
+  sceneId: 13059938
   serverOnly: 0
   m_AssetId: 
 --- !u!114 &4747601277978357749
@@ -460,11 +460,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6709875523430537218}
     m_Modifications:
-    - target: {fileID: 5277203565071941714, guid: 36c0920bd4575e0488612a266ab5799f,
-        type: 3}
-      propertyPath: m_Name
-      value: HP Bar
-      objectReference: {fileID: 0}
     - target: {fileID: 6667294252359175138, guid: 36c0920bd4575e0488612a266ab5799f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -519,6 +514,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5277203565071941714, guid: 36c0920bd4575e0488612a266ab5799f,
+        type: 3}
+      propertyPath: m_Name
+      value: HP Bar
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36c0920bd4575e0488612a266ab5799f, type: 3}

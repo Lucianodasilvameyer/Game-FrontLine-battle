@@ -87,6 +87,7 @@ public class SpawnarMunicao : MonoBehaviour
             else
             {
                 Municao GameObject = Instantiate(municaoPrefab, Position, Quaternion.identity).GetComponent<Municao>();
+                //ListMunicao.Add(municao.gameObject);
                 
             }
         }

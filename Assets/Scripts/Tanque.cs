@@ -19,9 +19,11 @@ public class Tanque : NetworkBehaviour
         
         TiroDoPlayer_ref = GetComponent<TiroDoPlayer>();
 
-        //canhaoMovimento_ref = GameObject.Find("Canhao").GetComponent<CanhaoMovimento>();
+        canhaoMovimento_ref = GetComponentInChildren<CanhaoMovimento>();
 
         vida_ref = GetComponent<Vida>();
+
+        usarRefereciaDoPlayer_ref = GameObject.Find("Game").GetComponent<UsarRefereciaDoPlayer>();
     }
 
 
@@ -46,7 +48,7 @@ public class Tanque : NetworkBehaviour
     public void Desativar()
     {
         tanqueMovimento_ref.enabled = false;
-        //canhaoMovimento_ref.enabled = false;
+        canhaoMovimento_ref.enabled = false;
         TiroDoPlayer_ref.enabled = false;
 
 

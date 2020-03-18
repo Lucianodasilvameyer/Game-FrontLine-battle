@@ -5,8 +5,10 @@ using Mirror;
 
 public class Game : NetworkBehaviour
 {
-    CanhaoMovimento canhaoMovimento_ref;
+    
     public static Game singleton;
+
+    SpriteRenderer spriteRenderer_ref;
 
     Vida vida_ref;
     UsarRefereciaDoPlayer usarRefereciaDoPlayer_ref;
@@ -15,18 +17,24 @@ public class Game : NetworkBehaviour
 
     public GameObject BotaoBack;
 
+
+
     SpawnarArmadilhas[] spawnarArmadilhas;
     SpawnarArmadilhas spawnarArmadilhas_ref;
 
-    SpawnarMunicao[] spawnarMunicao;
+    
     SpawnarMunicao spawnarMunicao_ref;
+    SpawnarMunicao[] spawnarMunicao;
 
 
     void Awake()
     {
-        usarRefereciaDoPlayer_ref = GameObject.Find("Game").GetComponent<UsarRefereciaDoPlayer>();
-        spawnarArmadilhas_ref = GameObject.Find("Game").GetComponent<SpawnarArmadilhas>();
-        //canhaoMovimento_ref = GameObject.Find("Canhao").GetComponent<CanhaoMovimento>();
+        spriteRenderer_ref = GameObject.Find("GameOver").GetComponent<SpriteRenderer>();
+        usarRefereciaDoPlayer_ref = GetComponent<UsarRefereciaDoPlayer>();
+        spawnarArmadilhas_ref = GetComponent<SpawnarArmadilhas>();
+       
+        spawnarMunicao_ref = GetComponent<SpawnarMunicao>();
+
 
 
         if(singleton != null && singleton != this)
@@ -68,30 +76,27 @@ public class Game : NetworkBehaviour
 
     public void DesligarSpawnArmadilhas()
     {
-        if (spawnarArmadilhas_ref.ListArmadilhas != null)
-        {
-            for (int i = 0; i < spawnarArmadilhas_ref.ListArmadilhas.Count; i++)
-            {
-                spawnarArmadilhas[i] = spawnarArmadilhas_ref.ListArmadilhas[i].GetComponent<SpawnarArmadilhas>();
-                spawnarArmadilhas[i].enabled = false;
 
-            }
-        }
+        spawnarArmadilhas_ref.enabled = false;
+        
     }
     public void DesligarSpawnmunicao()
     {
-        if (spawnarMunicao_ref.ListMunicao != null)
+        spawnarMunicao_ref.enabled = false;
+        /*if (spawnarMunicao_ref.ListMunicao != null)
         {
             for (int i = 0; i < spawnarMunicao_ref.ListMunicao.Count; i++)
             {
-                spawnarMunicao[i] = spawnarMunicao_ref.ListMunicao[i].GetComponent<SpawnarMunicao>();
-                spawnarMunicao[i].enabled = false;
+                GameObject [] municoes = spawnarMunicao_ref.ListMunicao.ToArray();
+
+               
+                municoes[i].SetActive(false);
             }
-        }
+        }*/
     }
     public void AtivarGameOver()
     {
-         GameOver.SetActive(true);
+        spriteRenderer_ref.enabled = true;
                 
     }
     public void AtivarBotaoBack()
@@ -101,19 +106,7 @@ public class Game : NetworkBehaviour
             
         
     }
-    /*public void DesativarCanhaoMovimento()
-    {
-        if(usarRefereciaDoPlayer_ref.ListCanhao !=null)
-        {
-            for(int i=0;i<usarRefereciaDoPlayer_ref.ListCanhao.Count; i++)
-            {
-                
-                
-                    canhaoMovimento_ref.enabled = false;
-                
-            }
-        }
-    }*/
+    
 
 
     
