@@ -1481,6 +1481,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f89bda03e8719ee4ab668589da437b7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  usarRefereciaDoPlayer_ref: {fileID: 0}
+  tiroDoPlayer_ref: {fileID: 0}
+  vida_ref: {fileID: 0}
+  vida: []
 --- !u!114 &1496111315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1493,6 +1497,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c431b6375c5204094e804ae558f77a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnarMunicao_ref: {fileID: 0}
+  spawnarMunicao: []
 --- !u!114 &1496111316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1505,6 +1511,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f54f71f1fab5004aa71acbebd566d35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnarArmadilhas_ref: {fileID: 0}
+  spawnarArmadilhas: []
 --- !u!114 &1496111317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1517,8 +1525,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66a0081e9d219ce438de8d1a07067aa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vida_ref: {fileID: 0}
-  tanqueMovimento_ref: {fileID: 0}
 --- !u!114 &1496111318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1547,8 +1553,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69d4337bce016d84cac1d48e52cf1886, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vida_ref: {fileID: 0}
-  Botao: {fileID: 695644096}
 --- !u!114 &1496111320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1561,9 +1565,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b45adcac6e1ac064c87e101a0639d03d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vida_ref: {fileID: 0}
-  spriteRenderer_ref: {fileID: 0}
-  usarRefereciaDoPlayer_ref: {fileID: 0}
 --- !u!114 &1496111321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1589,6 +1590,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ListPlayer: []
+  ListCanhao: []
 --- !u!114 &1496111323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1853,7 +1855,7 @@ MonoBehaviour:
   networkAddress: localhost
   maxConnections: 4
   authenticator: {fileID: 0}
-  playerPrefab: {fileID: 5359348652226382822, guid: a641e4eb1e566534397acac1b2e34dfc,
+  playerPrefab: {fileID: 7727448421044276765, guid: a641e4eb1e566534397acac1b2e34dfc,
     type: 3}
   autoCreatePlayer: 1
   playerSpawnMethod: 0
@@ -2247,20 +2249,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 202031322008839222, guid: 626186bcaebe9c54290195bae485b7e2,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 202031322008839221, guid: 626186bcaebe9c54290195bae485b7e2,
         type: 3}
       propertyPath: m_Name
       value: Main Camera
-      objectReference: {fileID: 0}
-    - target: {fileID: 202031322008839221, guid: 626186bcaebe9c54290195bae485b7e2,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 202031322008839369, guid: 626186bcaebe9c54290195bae485b7e2,
         type: 3}

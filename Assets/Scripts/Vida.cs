@@ -34,6 +34,7 @@ public class Vida : MonoBehaviour
                 Game.singleton.DesligarSpawnArmadilhas();
                 Game.singleton.AtivarGameOver();
                 Game.singleton.AtivarBotaoBack();
+                //Game.singleton.DesativarCanhaoMovimento();
 
                 if(OnDeath != null)
                 {

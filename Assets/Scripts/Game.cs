@@ -5,7 +5,7 @@ using Mirror;
 
 public class Game : NetworkBehaviour
 {
-
+    CanhaoMovimento canhaoMovimento_ref;
     public static Game singleton;
 
     Vida vida_ref;
@@ -26,6 +26,8 @@ public class Game : NetworkBehaviour
     {
         usarRefereciaDoPlayer_ref = GameObject.Find("Game").GetComponent<UsarRefereciaDoPlayer>();
         spawnarArmadilhas_ref = GameObject.Find("Game").GetComponent<SpawnarArmadilhas>();
+        //canhaoMovimento_ref = GameObject.Find("Canhao").GetComponent<CanhaoMovimento>();
+
 
         if(singleton != null && singleton != this)
         {
@@ -59,12 +61,11 @@ public class Game : NetworkBehaviour
     
 
 
-    public override void OnStartLocalPlayer()
-    {
-        base.OnStartLocalPlayer();
+   
+    
+    
 
-        usarRefereciaDoPlayer_ref.AddPlayer(gameObject);
-    }
+
     public void DesligarSpawnArmadilhas()
     {
         if (spawnarArmadilhas_ref.ListArmadilhas != null)
@@ -72,7 +73,7 @@ public class Game : NetworkBehaviour
             for (int i = 0; i < spawnarArmadilhas_ref.ListArmadilhas.Count; i++)
             {
                 spawnarArmadilhas[i] = spawnarArmadilhas_ref.ListArmadilhas[i].GetComponent<SpawnarArmadilhas>();
-
+                spawnarArmadilhas[i].enabled = false;
 
             }
         }
@@ -84,35 +85,35 @@ public class Game : NetworkBehaviour
             for (int i = 0; i < spawnarMunicao_ref.ListMunicao.Count; i++)
             {
                 spawnarMunicao[i] = spawnarMunicao_ref.ListMunicao[i].GetComponent<SpawnarMunicao>();
+                spawnarMunicao[i].enabled = false;
             }
         }
     }
     public void AtivarGameOver()
     {
-        if(usarRefereciaDoPlayer_ref.ListPlayer != null)
-        {
-            for(int i=0; i< usarRefereciaDoPlayer_ref.ListPlayer.Count; i++)
-            {
-                if (vida_ref.hp <= 0)
-                {
-                    GameOver.SetActive(true);
-                }
-            }
-        }
+         GameOver.SetActive(true);
+                
     }
     public void AtivarBotaoBack()
     {
-        if(usarRefereciaDoPlayer_ref.ListPlayer != null)
+        BotaoBack.SetActive(true);   
+                
+            
+        
+    }
+    /*public void DesativarCanhaoMovimento()
+    {
+        if(usarRefereciaDoPlayer_ref.ListCanhao !=null)
         {
-            for (int i = 0; i < usarRefereciaDoPlayer_ref.ListPlayer.Count; i++)
+            for(int i=0;i<usarRefereciaDoPlayer_ref.ListCanhao.Count; i++)
             {
-                if (vida_ref.hp <= 0)
-                {
-                    BotaoBack.SetActive(true);   
-                }
+                
+                
+                    canhaoMovimento_ref.enabled = false;
+                
             }
         }
-    }
+    }*/
 
 
     

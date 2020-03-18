@@ -17,7 +17,7 @@ public class CanhaoMovimento : MonoBehaviour
   
 
     
-    public Transform Tanque;
+    
 
     void Awake()
     {
@@ -35,10 +35,7 @@ public class CanhaoMovimento : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (usarRefereciaDoPlayer_ref.ListPlayer != null)
-        {
-            transform.position = Tanque.transform.position;
-        }
+        
                
          
         

@@ -7,6 +7,7 @@ public class UsarRefereciaDoPlayer : MonoBehaviour
     
 
     public List<GameObject> ListPlayer = new List<GameObject>();
+    public List<GameObject> ListCanhao = new List<GameObject>();
     // Start is called before the first frame update
 
     void Awake()
@@ -26,5 +27,9 @@ public class UsarRefereciaDoPlayer : MonoBehaviour
     public void AddPlayer(GameObject gameObject)
     {
         ListPlayer.Add(gameObject);
+    }
+    public void AddCanhao(GameObject gameObject)
+    {
+        ListCanhao.Add(gameObject);
     }
 }
