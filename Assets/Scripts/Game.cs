@@ -8,28 +8,28 @@ public class Game : NetworkBehaviour
     
     public static Game singleton;
 
-    SpriteRenderer spriteRenderer_ref;
+    
 
     Vida vida_ref;
     UsarRefereciaDoPlayer usarRefereciaDoPlayer_ref;
 
     public GameObject GameOver;
 
-    public GameObject BotaoBack;
+   
 
 
 
-    SpawnarArmadilhas[] spawnarArmadilhas;
+    
     SpawnarArmadilhas spawnarArmadilhas_ref;
 
     
     SpawnarMunicao spawnarMunicao_ref;
-    SpawnarMunicao[] spawnarMunicao;
+    
 
 
     void Awake()
     {
-        spriteRenderer_ref = GameObject.Find("GameOver").GetComponent<SpriteRenderer>();
+        
         usarRefereciaDoPlayer_ref = GetComponent<UsarRefereciaDoPlayer>();
         spawnarArmadilhas_ref = GetComponent<SpawnarArmadilhas>();
        
@@ -76,8 +76,15 @@ public class Game : NetworkBehaviour
 
     public void DesligarSpawnArmadilhas()
     {
-
-        spawnarArmadilhas_ref.enabled = false;
+      if(spawnarArmadilhas_ref.ListArmadilhas != null)
+      {
+            for(int i=0;i< spawnarArmadilhas_ref.ListArmadilhas.Count; i++)
+            {
+                GameObject[] armadilhas = spawnarArmadilhas_ref.ListArmadilhas.ToArray();
+                armadilhas[i].SetActive(false);
+            }
+      }
+        //spawnarArmadilhas_ref.enabled = false;
         
     }
     public void DesligarSpawnmunicao()
@@ -94,18 +101,8 @@ public class Game : NetworkBehaviour
             }
         }*/
     }
-    public void AtivarGameOver()
-    {
-        spriteRenderer_ref.enabled = true;
-                
-    }
-    public void AtivarBotaoBack()
-    {
-        BotaoBack.SetActive(true);   
-                
-            
-        
-    }
+    
+    
     
 
 

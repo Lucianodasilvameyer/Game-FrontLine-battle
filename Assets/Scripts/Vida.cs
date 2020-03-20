@@ -6,8 +6,8 @@ using System;
 
 public class Vida : MonoBehaviour
 {
-   
-
+    Tanque tanque_ref;
+    
     public event Action OnDeath; 
 
     [SerializeField]
@@ -32,8 +32,8 @@ public class Vida : MonoBehaviour
 
                 Game.singleton.DesligarSpawnmunicao();
                 Game.singleton.DesligarSpawnArmadilhas();
-                Game.singleton.AtivarGameOver();
-                Game.singleton.AtivarBotaoBack();
+                tanque_ref.AtivarGameOver();
+                tanque_ref.AtivarBotaoBack();
 
 
                 if(OnDeath != null)
@@ -59,8 +59,8 @@ public class Vida : MonoBehaviour
 
     private void Awake()
     {
-       
 
+        tanque_ref = GetComponent<Tanque>();
         HP = HPMax;
         
         

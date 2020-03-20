@@ -5,6 +5,9 @@ using Mirror;
 
 public class Tanque : NetworkBehaviour
 {
+    public GameObject BotaoBack;
+
+    SpriteRenderer spriteRenderer_ref;
     TanqueMovimento tanqueMovimento_ref;
     CanhaoMovimento canhaoMovimento_ref;
     TiroDoPlayer TiroDoPlayer_ref;
@@ -15,6 +18,8 @@ public class Tanque : NetworkBehaviour
 
     private void Awake()
     {
+        spriteRenderer_ref = GameObject.Find("GameOver").GetComponentInChildren<SpriteRenderer>();
+
         tanqueMovimento_ref = GetComponent<TanqueMovimento>();
         
         TiroDoPlayer_ref = GetComponent<TiroDoPlayer>();
@@ -60,6 +65,18 @@ public class Tanque : NetworkBehaviour
         usarRefereciaDoPlayer_ref.AddPlayer(gameObject);
 
        
+    }
+    public void AtivarGameOver()
+    {
+        spriteRenderer_ref.enabled = true;
+
+    }
+    public void AtivarBotaoBack()
+    {
+        BotaoBack.SetActive(true);
+
+
+
     }
 
 }
