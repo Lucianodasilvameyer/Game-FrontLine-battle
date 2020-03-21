@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using Mirror;
 
-public class TiroDoPlayer : MonoBehaviour
+public class TiroDoPlayer : NetworkBehaviour
 {
-    //[SerializeField]
-    //CameraScript camScript;
+   
 
     [SerializeField]
     Municao municao;
@@ -17,10 +17,18 @@ public class TiroDoPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && municao.Ammo > 0)
+        if (!isLocalPlayer)
         {
-            ShootAt();
+            return;
         }
+        else
+        {
+            if (Input.GetMouseButtonDown(0) && municao.Ammo > 0)
+            {
+                ShootAt();
+            }
+        }
+        
     }
 
     void ShootAt()

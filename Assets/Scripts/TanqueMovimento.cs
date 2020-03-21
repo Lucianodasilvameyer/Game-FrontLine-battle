@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Mirror;
 
-public class TanqueMovimento : MonoBehaviour
+public class TanqueMovimento : NetworkBehaviour
 {
     public float movSpeed;
 
@@ -10,6 +11,9 @@ public class TanqueMovimento : MonoBehaviour
 
     [SerializeField]
     Vector2 movement;
+
+   // [SerializeField]
+    //Vector2 movement2;
 
     Animator animator;
 
@@ -25,13 +29,31 @@ public class TanqueMovimento : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
+        /*movement2.x = Input.GetAxisRaw("Horizontal2");
+        movement2.y = Input.GetAxisRaw("Vertical2");*/
+
         animator.SetFloat("Horizontal",movement.x);
         animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("Speed", movement.sqrMagnitude);
+
+        /*animator.SetFloat("Horizontal", movement2.x);
+        animator.SetFloat("Vertical", movement2.y);
+        animator.SetFloat("Speed", movement2.sqrMagnitude);*/
+
     }
 
     private void FixedUpdate()
     {
-        righ.MovePosition(righ.position + movement * movSpeed * Time.fixedDeltaTime);
+        if (!isLocalPlayer)
+        {
+            return;
+           
+        }
+        else
+        {
+            righ.MovePosition(righ.position + movement * movSpeed * Time.fixedDeltaTime);
+        }
+
+        
     }
 }

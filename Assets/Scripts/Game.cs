@@ -11,7 +11,7 @@ public class Game : NetworkBehaviour
     
 
     Vida vida_ref;
-    UsarRefereciaDoPlayer usarRefereciaDoPlayer_ref;
+    //UsarRefereciaDoPlayer usarRefereciaDoPlayer_ref;
 
     public GameObject GameOver;
 
@@ -30,7 +30,7 @@ public class Game : NetworkBehaviour
     void Awake()
     {
         
-        usarRefereciaDoPlayer_ref = GetComponent<UsarRefereciaDoPlayer>();
+        //usarRefereciaDoPlayer_ref = GetComponent<UsarRefereciaDoPlayer>();
         spawnarArmadilhas_ref = GetComponent<SpawnarArmadilhas>();
        
         spawnarMunicao_ref = GetComponent<SpawnarMunicao>();

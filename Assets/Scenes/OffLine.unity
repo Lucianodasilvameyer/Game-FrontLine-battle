@@ -1117,7 +1117,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 519420031}
-  Tanque: {fileID: 2044864181}
 --- !u!212 &1185161542
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1703,9 +1702,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23f6b801a216cdf4b91047bf2e1ee645, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  municao: {fileID: 408112223548620848, guid: c177659208a2afa4e8ec761432a32138, type: 3}
   municaoPrefab: {fileID: 5688797720662961844, guid: c177659208a2afa4e8ec761432a32138,
     type: 3}
-  Listmunicao: []
+  ListMunicao: []
   LinhaDeSpawnMuni1: {fileID: 797407600}
   LinhaDeSpawnMuni2: {fileID: 989700414}
   LinhaDeSpawnMuni3: {fileID: 1447583498}
@@ -1724,6 +1724,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 687a3f42631fd3e4289475c62053cdd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bomba: {fileID: 2456826282710682213, guid: cc7737121a7dd824f869284735db3172, type: 3}
+  minaTerrestre: {fileID: 3444221888379862097, guid: 90d6be59351bbb647b75cc6ea3d205a6,
+    type: 3}
   MinaTerrestrePrefab: {fileID: 3444221888379862100, guid: 90d6be59351bbb647b75cc6ea3d205a6,
     type: 3}
   BombaPrefab: {fileID: 6197418348946905943, guid: cc7737121a7dd824f869284735db3172,
@@ -1747,8 +1750,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f89bda03e8719ee4ab668589da437b7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player:
-  - {fileID: 2044864179}
 --- !u!114 &1496111315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1785,8 +1786,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66a0081e9d219ce438de8d1a07067aa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player:
-  - {fileID: 2044864179}
 --- !u!114 &1496111318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1813,7 +1812,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69d4337bce016d84cac1d48e52cf1886, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Botao: {fileID: 695644096}
 --- !u!114 &1496111320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1997,7 +1995,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1581199783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2075,7 +2073,7 @@ MonoBehaviour:
   networkAddress: localhost
   maxConnections: 4
   authenticator: {fileID: 0}
-  playerPrefab: {fileID: 5140150619223892777, guid: a641e4eb1e566534397acac1b2e34dfc,
+  playerPrefab: {fileID: 7727448421044276765, guid: a641e4eb1e566534397acac1b2e34dfc,
     type: 3}
   autoCreatePlayer: 1
   playerSpawnMethod: 0
@@ -2619,7 +2617,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 825411be338c16843b37ff7c9d91e5c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camScript: {fileID: 519420030}
   municao: {fileID: 2044864188}
   bullet: {fileID: 2011448349234564689, guid: 1f54f00efb6869f4b8ea0b584a9a748f, type: 3}
   bulletExit: {fileID: 1404886276}
